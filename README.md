@@ -54,7 +54,18 @@ No model is asked anything. Each validator fetches `https://<domain>/.well-known
 
 ## Live on studionet
 
-Deployed and exercised against a real site, `yoyoblair333-wq.github.io`, whose proof file is [here](https://yoyoblair333-wq.github.io/.well-known/genlayer-proof.txt). Every transaction, the outcome codes and the state read back are in **[docs/LIVE_EVIDENCE.md](docs/LIVE_EVIDENCE.md)**, rendered from [`docs/live/run.json`](docs/live/run.json) by [glkit](https://github.com/yoyoblair333-wq/glkit).
+Deployed and exercised end to end against a real site, `yoyoblair333-wq.github.io` ([its proof file](https://yoyoblair333-wq.github.io/.well-known/genlayer-proof.txt)). 10 transactions, all finalized with majority agreement:
+
+| Step | Outcome read back from the chain |
+|---|---|
+| Alice publishes her challenge line on the site, then calls `verify` | **VERIFIED** (`OK`), `is_verified = true`, valid 90 days |
+| Bob claims the same domain but never publishes his line | stays **PENDING** (`LINE_MISSING`), `is_verified = false` |
+| Bob claims `github.com`, which serves no proof file | **PENDING** (`FILE_NOT_FOUND`) |
+| A URL is passed instead of a domain | reverted `[EXPECTED] give a bare domain…` |
+| Bob rechecks Alice's proof while the line is still up | still **VERIFIED**, window restarted |
+| The line is removed from the site; Bob rechecks again | **REVOKED** (`LINE_MISSING`), `verified_addresses = []` |
+
+Every transaction, the outcome codes and the state read back are in **[docs/LIVE_EVIDENCE.md](docs/LIVE_EVIDENCE.md)**, rendered from [`docs/live/run.json`](docs/live/run.json) by [glkit](https://github.com/yoyoblair333-wq/glkit).
 
 ## Tests
 
