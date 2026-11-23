@@ -1,0 +1,73 @@
+{
+ "steps": [
+  {
+   "step": "deploy_domain_proof",
+   "role": "alice",
+   "tx": "0x574d47638409b0324a071506467609e5c04ea0c5ab00e58a1463f074c35c5c9b",
+   "sent_at": "2026-11-23T19:11:12Z",
+   "status": "decided/accepted",
+   "result": "MAJORITY_AGREE",
+   "execution": "SUCCESS",
+   "votes": [
+    "agree",
+    "agree",
+    "agree",
+    "idle",
+    "idle"
+   ],
+   "error": null,
+   "fee_paid_wei": "100000000000010352",
+   "explorer": "https://explorer-studio.genlayer.com/tx/0x574d47638409b0324a071506467609e5c04ea0c5ab00e58a1463f074c35c5c9b"
+  },
+  {
+   "step": "alice_requests_challenge",
+   "role": "alice",
+   "tx": "0xc3928312b27d42bda6a26e463ffd7ad5d41f502e0b4b86d29fc0c43650fc85bd",
+   "sent_at": "2026-11-23T19:11:32Z",
+   "status": "decided/accepted",
+   "result": "MAJORITY_AGREE",
+   "execution": "SUCCESS",
+   "votes": [
+    "agree",
+    "agree",
+    "agree",
+    "agree",
+    "idle"
+   ],
+   "error": null,
+   "fee_paid_wei": "100000000000010352",
+   "explorer": "https://explorer-studio.genlayer.com/tx/0xc3928312b27d42bda6a26e463ffd7ad5d41f502e0b4b86d29fc0c43650fc85bd"
+  }
+ ],
+ "reads": {
+  "alice_challenge": {
+   "address": "0x9CE25091b75968759A68290b1B4dB6d173aC205A",
+   "challenge_line": "genlayer-domain-proof v1 domain=yoyoblair333-wq.github.io address=0x9ce25091b75968759a68290b1b4db6d173ac205a nonce=b62f2cf6244ff78e68edc15b",
+   "challenged_at": "2026-11-23T19:11:30Z",
+   "checks": 0,
+   "domain": "yoyoblair333-wq.github.io",
+   "last_checked_at": "",
+   "last_outcome": "",
+   "proof_url": "https://yoyoblair333-wq.github.io/.well-known/genlayer-proof.txt",
+   "status": "PENDING",
+   "valid_until": "",
+   "verified_at": "",
+   "verified_now": false
+  }
+ },
+ "network": "Genlayer Studio Network",
+ "roles": {
+  "alice": "0x9CE25091b75968759A68290b1B4dB6d173aC205A",
+  "bob": "0x23F38Ef6E76AC4655FE12B9844319b98269E7084"
+ },
+ "funded_alice": true,
+ "funded_bob": true,
+ "deploy_domain_proof_address": "0xb287E34b4779f23b6A88A206eB0514eEE40D8639",
+ "contracts": {
+  "deploy_domain_proof": {
+   "address": "0xb287E34b4779f23b6A88A206eB0514eEE40D8639",
+   "explorer": "https://explorer-studio.genlayer.com/address/0xb287E34b4779f23b6A88A206eB0514eEE40D8639"
+  }
+ },
+ "domain": "yoyoblair333-wq.github.io"
+}
